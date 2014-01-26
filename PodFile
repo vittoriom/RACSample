@@ -1,0 +1,15 @@
+platform :ios, "7.0"
+
+pod 'ReactiveCocoa'
+pod 'AFNetworking'
+pod 'ReactiveViewModel'
+pod 'MBProgressHUD'
+pod 'libextobjc'
+pod 'AFNetworking-RACExtensions', :git => 'https://github.com/knshiro/AFNetworking-RACExtensions.git'
+
+target "VMRACProjectTests" do
+
+pod 'Kiwi/XCTest'
+pod 'Nocilla'
+
+end
