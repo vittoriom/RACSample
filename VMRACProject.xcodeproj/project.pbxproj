@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		1352830AC24B4636903BCC89 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B77122DB0A42DAB59E6166 /* libPods.a */; };
 		3415E671EB774EEDB05EAD27 /* libPods-VMRACProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A60109F6B2446F8B85BF6A /* libPods-VMRACProjectTests.a */; };
-		525551441895B5A00074CB93 /* SOQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 525551431895B5A00074CB93 /* SOQuestion.m */; };
+		525551441895B5A00074CB93 /* SOQuestionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 525551431895B5A00074CB93 /* SOQuestionTests.m */; };
+		525551481895B85C0074CB93 /* SOQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 525551471895B85C0074CB93 /* SOQuestion.m */; };
+		5255514B1895BA470074CB93 /* SOUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5255514A1895BA470074CB93 /* SOUserTests.m */; };
+		5255514E1895BDB70074CB93 /* SOUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5255514D1895BDB70074CB93 /* SOUser.m */; };
 		525DAB2C1895B1A600BD52D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525DAB2B1895B1A600BD52D5 /* Foundation.framework */; };
 		525DAB2E1895B1A700BD52D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525DAB2D1895B1A700BD52D5 /* CoreGraphics.framework */; };
 		525DAB301895B1A700BD52D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525DAB2F1895B1A700BD52D5 /* UIKit.framework */; };
@@ -36,8 +39,13 @@
 /* Begin PBXFileReference section */
 		0D1FFD9A199B400AA3D62DD8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		4248071CDB87466DAFE36AA2 /* Pods-VMRACProjectTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMRACProjectTests.xcconfig"; path = "Pods/Pods-VMRACProjectTests.xcconfig"; sourceTree = "<group>"; };
-		525551431895B5A00074CB93 /* SOQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOQuestion.m; sourceTree = "<group>"; };
+		525551431895B5A00074CB93 /* SOQuestionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOQuestionTests.m; sourceTree = "<group>"; };
 		525551451895B5B90074CB93 /* VMRACProjectTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMRACProjectTests.pch; sourceTree = "<group>"; };
+		525551461895B85C0074CB93 /* SOQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOQuestion.h; path = Model/SOQuestion.h; sourceTree = "<group>"; };
+		525551471895B85C0074CB93 /* SOQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOQuestion.m; path = Model/SOQuestion.m; sourceTree = "<group>"; };
+		5255514A1895BA470074CB93 /* SOUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOUserTests.m; sourceTree = "<group>"; };
+		5255514C1895BDB70074CB93 /* SOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOUser.h; path = Model/SOUser.h; sourceTree = "<group>"; };
+		5255514D1895BDB70074CB93 /* SOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOUser.m; path = Model/SOUser.m; sourceTree = "<group>"; };
 		525DAB281895B1A600BD52D5 /* VMRACProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMRACProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		525DAB2B1895B1A600BD52D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		525DAB2D1895B1A700BD52D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -83,6 +91,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		525551491895B8620074CB93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				525551461895B85C0074CB93 /* SOQuestion.h */,
+				525551471895B85C0074CB93 /* SOQuestion.m */,
+				5255514C1895BDB70074CB93 /* SOUser.h */,
+				5255514D1895BDB70074CB93 /* SOUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		525DAB1F1895B1A600BD52D5 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +139,7 @@
 		525DAB311895B1A700BD52D5 /* VMRACProject */ = {
 			isa = PBXGroup;
 			children = (
+				525551491895B8620074CB93 /* Model */,
 				525DAB3A1895B1A700BD52D5 /* VMAppDelegate.h */,
 				525DAB3B1895B1A700BD52D5 /* VMAppDelegate.m */,
 				525DAB3D1895B1A700BD52D5 /* Images.xcassets */,
@@ -143,7 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				525DAB4B1895B1A700BD52D5 /* Supporting Files */,
-				525551431895B5A00074CB93 /* SOQuestion.m */,
+				525551431895B5A00074CB93 /* SOQuestionTests.m */,
+				5255514A1895BA470074CB93 /* SOUserTests.m */,
 			);
 			path = VMRACProjectTests;
 			sourceTree = "<group>";
@@ -321,8 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5255514E1895BDB70074CB93 /* SOUser.m in Sources */,
 				525DAB381895B1A700BD52D5 /* main.m in Sources */,
 				525DAB3C1895B1A700BD52D5 /* VMAppDelegate.m in Sources */,
+				525551481895B85C0074CB93 /* SOQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +353,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				525551441895B5A00074CB93 /* SOQuestion.m in Sources */,
+				5255514B1895BA470074CB93 /* SOUserTests.m in Sources */,
+				525551441895B5A00074CB93 /* SOQuestionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
