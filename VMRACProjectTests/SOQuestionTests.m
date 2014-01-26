@@ -1,4 +1,7 @@
-SPEC_BEGIN(SOQuestion)
+#import "SOQuestion.h"
+#import "SOUser.h"
+
+SPEC_BEGIN(SOQuestionTests)
 
 describe(@"Questions", ^{
     it(@"should be correctly initialized with a JSON Dictionary", ^{
