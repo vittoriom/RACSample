@@ -1,6 +1,21 @@
 #import "SOQuestion.h"
 #import "SOUser.h"
 
+extern NSString * const kSOUserReputation;
+extern NSString * const kSOUserID;
+extern NSString * const kSOUserPermalink;
+extern NSString * const kSOUserName;
+extern NSString * const kSOUserPicture;
+
+extern NSString * const kSOQuestionAnswerCount;
+extern NSString * const kSOQuestionScore;
+extern NSString * const kSOQuestionCreationDate;
+extern NSString * const kSOQuestionLink;
+extern NSString * const kSOQuestionTags;
+extern NSString * const kSOQuestionTitle;
+extern NSString * const kSOQuestionViewsCount;
+extern NSString * const kSOQuestionOwner;
+
 SPEC_BEGIN(SOQuestionTests)
 
 describe(@"Questions", ^{
@@ -36,9 +51,9 @@ describe(@"Questions", ^{
         [modelObject.owner shouldNotBeNil];
     });
     
-    it(@"should return nil if the dictionary is nil", ^{
+    it(@"should not return nil if the dictionary is nil", ^{
         SOQuestion *modelObject = [[SOQuestion alloc] initWithDictionary:nil];
-        [[modelObject should] beNil];
+        [[modelObject shouldNot] beNil];
     });
 });
 

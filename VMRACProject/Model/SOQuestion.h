@@ -10,15 +10,6 @@
 
 @class SOUser;
 
-extern NSString * const kSOQuestionAnswerCount;
-extern NSString * const kSOQuestionScore;
-extern NSString * const kSOQuestionCreationDate;
-extern NSString * const kSOQuestionLink;
-extern NSString * const kSOQuestionTags;
-extern NSString * const kSOQuestionTitle;
-extern NSString * const kSOQuestionViewsCount;
-extern NSString * const kSOQuestionOwner;
-
 @interface SOQuestion : NSObject
 
 @property (nonatomic, readonly) NSInteger answerCount;

@@ -1,5 +1,19 @@
 #import "SOUser.h"
 
+extern NSString * const kSOUserBadges;
+extern NSString * const kSOUserBronzeBadges;
+extern NSString * const kSOUserSilverBadges;
+extern NSString * const kSOUserGoldBadges;
+extern NSString * const kSOUserAccountID;
+extern NSString * const kSOUserReputation;
+extern NSString * const kSOUserID;
+extern NSString * const kSOUserAge;
+extern NSString * const kSOUserLocation;
+extern NSString * const kSOUserWebsite;
+extern NSString * const kSOUserPermalink;
+extern NSString * const kSOUserName;
+extern NSString * const kSOUserPicture;
+
 SPEC_BEGIN(SOUserTests)
 
 describe(@"Users", ^{
@@ -33,8 +47,8 @@ describe(@"Users", ^{
         [[@(modelObject.goldBadges) should] equal:@250];
         [[@(modelObject.accountID) should] equal:@11683];
         [[@(modelObject.age) should] equal:@37];
-        [[modelObject.location should] equal:@"Reading, United Kingdom"]];
-        [[modelObject.profileURL should] equal:[NSURL URLWithString:@"http://csharpindepth.com"]];
+        [[modelObject.location should] equal:@"Reading, United Kingdom"];
+        [[modelObject.websiteURL should] equal:[NSURL URLWithString:@"http://csharpindepth.com"]];
     });
     
     it(@"should be correctly initialized with a light JSON Dictionary", ^{
@@ -55,9 +69,9 @@ describe(@"Users", ^{
         [[modelObject.profileURL should] equal:[NSURL URLWithString:@"http://stackoverflow.com/users/87234/gmannickg"]];
     });
     
-    it(@"should return nil if dictionary is nil", ^{
+    it(@"should not return nil if dictionary is nil", ^{
         SOUser *modelObject = [[SOUser alloc] initWithDictionary:nil];
-        [[modelObject should] beNil];
+        [[modelObject shouldNot] beNil];
     });
 });
 
