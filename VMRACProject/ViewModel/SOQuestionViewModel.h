@@ -12,7 +12,7 @@
 
 @interface SOQuestionViewModel : RVMViewModel
 
-@property (nonatomic, readonly) NSArray *model;
+@property (nonatomic, strong) NSArray *model;
 
 - (instancetype) initWithModel:(NSArray *)modelObject;
 

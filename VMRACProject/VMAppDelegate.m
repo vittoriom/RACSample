@@ -7,7 +7,8 @@
 //
 
 #import "VMAppDelegate.h"
-#import "SOQuestionViewModel.h"
+#import "SONewestQuestionsViewModel.h"
+#import "SOVotedQuestionsViewModel.h"
 #import "SOQuestionViewController.h"
 
 @implementation VMAppDelegate
@@ -16,8 +17,15 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
  
-    SOQuestionViewController *viewController = [[SOQuestionViewController alloc] initWithViewModel:[[SOQuestionViewModel alloc] initWithModel:nil]];
-    self.window.rootViewController = viewController;
+    SOQuestionViewController *viewController = [[SOQuestionViewController alloc] initWithViewModel:[SOVotedQuestionsViewModel new]];
+	viewController.title = @"Hot";
+	SOQuestionViewController *viewController2 = [[SOQuestionViewController alloc] initWithViewModel:[SONewestQuestionsViewModel new]];
+	viewController2.title = @"New";
+	
+	UITabBarController *tabBarController = [[UITabBarController alloc] init];
+	tabBarController.viewControllers = @[viewController,viewController2];
+	
+    self.window.rootViewController = tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
