@@ -9,10 +9,11 @@
 #import "SOQuestionViewController.h"
 #import "SOQuestionViewModel.h"
 #import "SOQuestion.h"
+#import "SOAnswerTableViewCell.h"
 #import "SOUser.h"
 #import "NSDate+HumanInterval.h"
 
-@interface SOQuestionViewController ()
+@interface SOQuestionViewController () <UITableViewDataSource>
 
 @property (nonatomic, strong) SOQuestionViewModel *viewModel;
 
@@ -35,6 +36,8 @@
     [super viewDidLoad];
 	
 	//Load data
+	self.questionAnswersTable.dataSource = self;
+	
 	@weakify(self);
 	[[[RACObserve(self.viewModel, model) ignore:nil] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(SOQuestion *question) {
 		@strongify(self);
@@ -47,6 +50,23 @@
 			[self.questionAnswersTable reloadData];
 		}];
 	}];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return self.viewModel.answers.count;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	SOAnswerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SOAnswerCell"] ?:
+	[[SOAnswerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SOAnswerCell"];;
+	
+	cell.modelObject = self.viewModel.answers[indexPath.row];
+	
+	return cell;
 }
 
 @end

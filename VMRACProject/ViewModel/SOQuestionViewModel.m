@@ -9,11 +9,13 @@
 #import "SOQuestionViewModel.h"
 #import "SOQuestion.h"
 #import "SOAnswersForQuestionOperation.h"
+#import "SOAnswer.h"
 #import "SOHTTPRequestOperationManager.h"
 
 @interface SOQuestionViewModel ()
 
 @property (nonatomic, strong) SOQuestion *model;
+@property (nonatomic, strong) NSArray *answers;
 
 @end
 
@@ -33,11 +35,20 @@
 {
 	RACReplaySubject *subject = [RACReplaySubject subject];
 	
+	@weakify(self);
 	[[[SOHTTPRequestOperationManager manager] rac_enqueueHTTPRequestOperation:[[SOAnswersForQuestionOperation alloc] initWithQuestionID:self.model.questionID] ] subscribeNext:^(RACTuple *response) {
+		@strongify(self);
 		NSData *responseData = response.second;
 		NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
 		
-		[subject sendNext:responseDictionary];
+		self.answers = [[[responseDictionary[@"items"] rac_sequence] map:^id(NSDictionary *value) {
+			SOAnswer *answer = [[SOAnswer alloc] initWithDictionary:value];
+			return answer;
+		}] array];
+		
+		self.active = NO;
+		
+		[subject sendNext:self.answers];
 		[subject sendCompleted];
 	}];
 	

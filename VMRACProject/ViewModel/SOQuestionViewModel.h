@@ -13,6 +13,7 @@
 @interface SOQuestionViewModel : RVMViewModel
 
 @property (nonatomic, readonly) SOQuestion *model;
+@property (nonatomic, readonly) NSArray *answers;
 
 - (instancetype) initWithModel:(SOQuestion *)modelObject;
 - (RACSignal *) loadAnswers;
