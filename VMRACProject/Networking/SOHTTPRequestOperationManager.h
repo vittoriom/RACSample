@@ -1,5 +1,5 @@
 //
-//  SOSessionManager.h
+//  SOHTTPRequestOperationManager.h
 //  VMRACProject
 //
 //  Created by Vittorio Monaco on 27/01/14.
@@ -8,6 +8,6 @@
 
 #import <AFHTTPRequestOperationManager.h>
 
-@interface SOSessionManager : AFHTTPRequestOperationManager
+@interface SOHTTPRequestOperationManager : AFHTTPRequestOperationManager
 
 @end

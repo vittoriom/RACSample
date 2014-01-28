@@ -13,6 +13,7 @@
 @interface SOQuestionViewController : UIViewController
 
 @property (nonatomic, readonly) SOQuestionViewModel *viewModel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (instancetype) initWithViewModel:(SOQuestionViewModel *)viewModelObject;
 

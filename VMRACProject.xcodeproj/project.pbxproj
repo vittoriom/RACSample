@@ -28,8 +28,10 @@
 		52CE05451897018C000E5F4D /* SOQuestionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CE05441897018C000E5F4D /* SOQuestionViewModel.m */; };
 		52CE05471897088A000E5F4D /* SOQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CE05461897088A000E5F4D /* SOQuestionsViewController.m */; };
 		52F3BB8818970B7E00734830 /* SOQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BB8618970B7E00734830 /* SOQuestionViewController.m */; };
-		52F3BB8B18970BCB00734830 /* SOQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F3BB8A18970BCB00734830 /* SOQuestionView.xib */; };
-		52F3BB8F18970E7200734830 /* SOSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BB8E18970E7200734830 /* SOSessionManager.m */; };
+		52F3BB8F18970E7200734830 /* SOHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BB8E18970E7200734830 /* SOHTTPRequestOperationManager.m */; };
+		A4B5EED818979BB00004B8EE /* SOHotQuestionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B5EED718979BB00004B8EE /* SOHotQuestionsOperation.m */; };
+		A4B5EEDC1897A4670004B8EE /* SOQuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B5EEDB1897A4670004B8EE /* SOQuestionTableViewCell.m */; };
+		A4B5EEDE1897A4740004B8EE /* SOQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B5EEDD1897A4740004B8EE /* SOQuestionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,11 +75,15 @@
 		52CE05461897088A000E5F4D /* SOQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOQuestionsViewController.m; sourceTree = "<group>"; };
 		52F3BB8518970B7E00734830 /* SOQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOQuestionViewController.h; path = ViewController/SOQuestionViewController.h; sourceTree = "<group>"; };
 		52F3BB8618970B7E00734830 /* SOQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOQuestionViewController.m; path = ViewController/SOQuestionViewController.m; sourceTree = "<group>"; };
-		52F3BB8A18970BCB00734830 /* SOQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SOQuestionView.xib; sourceTree = "<group>"; };
-		52F3BB8D18970E7200734830 /* SOSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSessionManager.h; path = Networking/SOSessionManager.h; sourceTree = "<group>"; };
-		52F3BB8E18970E7200734830 /* SOSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSessionManager.m; path = Networking/SOSessionManager.m; sourceTree = "<group>"; };
+		52F3BB8D18970E7200734830 /* SOHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOHTTPRequestOperationManager.h; path = Networking/SOHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		52F3BB8E18970E7200734830 /* SOHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOHTTPRequestOperationManager.m; path = Networking/SOHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		65B77122DB0A42DAB59E6166 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A60109F6B2446F8B85BF6A /* libPods-VMRACProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VMRACProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4B5EED618979BB00004B8EE /* SOHotQuestionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOHotQuestionsOperation.h; path = Networking/Operations/SOHotQuestionsOperation.h; sourceTree = "<group>"; };
+		A4B5EED718979BB00004B8EE /* SOHotQuestionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOHotQuestionsOperation.m; path = Networking/Operations/SOHotQuestionsOperation.m; sourceTree = "<group>"; };
+		A4B5EEDA1897A4670004B8EE /* SOQuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOQuestionTableViewCell.h; path = View/SOQuestionTableViewCell.h; sourceTree = "<group>"; };
+		A4B5EEDB1897A4670004B8EE /* SOQuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOQuestionTableViewCell.m; path = View/SOQuestionTableViewCell.m; sourceTree = "<group>"; };
+		A4B5EEDD1897A4740004B8EE /* SOQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SOQuestionView.xib; path = View/SOQuestionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +227,8 @@
 		52B12D4E1896FE5B002E3844 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				52F3BB8A18970BCB00734830 /* SOQuestionView.xib */,
+				A4B5EEDD1897A4740004B8EE /* SOQuestionView.xib */,
+				A4B5EED91897A4430004B8EE /* UITableViewCells */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -229,10 +236,29 @@
 		52F3BB8C18970DFC00734830 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				52F3BB8D18970E7200734830 /* SOSessionManager.h */,
-				52F3BB8E18970E7200734830 /* SOSessionManager.m */,
+				A4B5EED218979B830004B8EE /* Operations */,
+				52F3BB8D18970E7200734830 /* SOHTTPRequestOperationManager.h */,
+				52F3BB8E18970E7200734830 /* SOHTTPRequestOperationManager.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		A4B5EED218979B830004B8EE /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A4B5EED618979BB00004B8EE /* SOHotQuestionsOperation.h */,
+				A4B5EED718979BB00004B8EE /* SOHotQuestionsOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		A4B5EED91897A4430004B8EE /* UITableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A4B5EEDA1897A4670004B8EE /* SOQuestionTableViewCell.h */,
+				A4B5EEDB1897A4670004B8EE /* SOQuestionTableViewCell.m */,
+			);
+			name = UITableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525DAB361895B1A700BD52D5 /* InfoPlist.strings in Resources */,
-				52F3BB8B18970BCB00734830 /* SOQuestionView.xib in Resources */,
+				A4B5EEDE1897A4740004B8EE /* SOQuestionView.xib in Resources */,
 				525DAB3E1895B1A700BD52D5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,9 +427,11 @@
 			files = (
 				5255514E1895BDB70074CB93 /* SOUser.m in Sources */,
 				525DAB381895B1A700BD52D5 /* main.m in Sources */,
-				52F3BB8F18970E7200734830 /* SOSessionManager.m in Sources */,
+				52F3BB8F18970E7200734830 /* SOHTTPRequestOperationManager.m in Sources */,
 				52F3BB8818970B7E00734830 /* SOQuestionViewController.m in Sources */,
+				A4B5EEDC1897A4670004B8EE /* SOQuestionTableViewCell.m in Sources */,
 				525DAB3C1895B1A700BD52D5 /* VMAppDelegate.m in Sources */,
+				A4B5EED818979BB00004B8EE /* SOHotQuestionsOperation.m in Sources */,
 				525551481895B85C0074CB93 /* SOQuestion.m in Sources */,
 				52CE05451897018C000E5F4D /* SOQuestionViewModel.m in Sources */,
 			);
