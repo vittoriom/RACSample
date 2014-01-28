@@ -23,7 +23,8 @@
 	viewController2.title = @"New";
 	
 	UITabBarController *tabBarController = [[UITabBarController alloc] init];
-	tabBarController.viewControllers = @[viewController,viewController2];
+	tabBarController.viewControllers = @[[[UINavigationController alloc] initWithRootViewController:viewController],
+										 [[UINavigationController alloc] initWithRootViewController:viewController2]];
 	
     self.window.rootViewController = tabBarController;
     

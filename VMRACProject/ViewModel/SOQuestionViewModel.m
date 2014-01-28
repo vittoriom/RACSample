@@ -23,11 +23,7 @@
 	if(!self) return nil;
 	
 	self.model = modelObject;
-	
-	[self.didBecomeActiveSignal subscribeNext:^(id x) {
 		
-	}];
-	
 	return self;
 }
 

@@ -11,6 +11,8 @@
 #import "SOQuestionsViewModel.h"
 #import "SOQuestionTableViewCell.h"
 #import <RACDelegateProxy.h>
+#import "SOQuestionViewModel.h"
+#import "SOQuestionViewController.h"
 
 @interface SOQuestionsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -23,7 +25,7 @@
 
 - (instancetype) initWithViewModel:(SOQuestionsViewModel *)viewModelObject
 {
-    self = [self initWithNibName:@"SOQuestionView" bundle:nil];
+    self = [self initWithNibName:@"SOQuestionsView" bundle:nil];
     if(!self) return nil;
     
     self.viewModel = viewModelObject;
@@ -37,20 +39,23 @@
     
 	self.tableView.dataSource = self;
 	
+	@weakify(self);
 	RACDelegateProxy *delegate = [[RACDelegateProxy alloc] initWithProtocol:@protocol(UITableViewDelegate)];
 	[[delegate rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple *tuple) {
+		@strongify(self);
 		NSIndexPath *indexPath = tuple.second;
 		SOQuestion *modelObject = self.viewModel.model[indexPath.row];
 		
 		//Show the question view controller
-		NSLog(@"tapped question: %@",modelObject);
+		SOQuestionViewModel *viewModel = [[SOQuestionViewModel alloc] initWithModel:modelObject];
+		SOQuestionViewController *questionVC = [[SOQuestionViewController alloc] initWithViewModel:viewModel];
+		[self.navigationController pushViewController:questionVC animated:YES];
 	}];
 	
 	self.tableViewDelegate = (id<UITableViewDelegate>)delegate;
 	self.tableView.delegate = (id<UITableViewDelegate>)delegate;
 	
-	@weakify(self);
-	[[RACObserve(self.viewModel, model) ignore:nil] subscribeNext:^(NSArray *x) {
+	[[[RACObserve(self.viewModel, model) ignore:nil] deliverOn:[RACScheduler mainThreadScheduler] ] subscribeNext:^(NSArray *x) {
 		@strongify(self);
 		
 		[self.tableView reloadData];
