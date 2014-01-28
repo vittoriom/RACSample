@@ -7,13 +7,14 @@
 //
 
 #import "SOQuestionViewController.h"
+#import "SOAnswer.h"
 #import "SOQuestionViewModel.h"
 #import "SOQuestion.h"
 #import "SOAnswerTableViewCell.h"
 #import "SOUser.h"
 #import "NSDate+HumanInterval.h"
 
-@interface SOQuestionViewController () <UITableViewDataSource>
+@interface SOQuestionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) SOQuestionViewModel *viewModel;
 
@@ -37,6 +38,7 @@
 	
 	//Load data
 	self.questionAnswersTable.dataSource = self;
+	self.questionAnswersTable.delegate = self;
 	
 	@weakify(self);
 	[[[RACObserve(self.viewModel, model) ignore:nil] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(SOQuestion *question) {
@@ -67,6 +69,14 @@
 	cell.modelObject = self.viewModel.answers[indexPath.row];
 	
 	return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	SOAnswer *modelObject = self.viewModel.answers[indexPath.row];
+	
+	CGFloat height = [modelObject.body sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(320, 10000)].height + 50;
+	return height;
 }
 
 @end

@@ -19,9 +19,12 @@
     self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     if (self) {
 		[RACObserve(self, modelObject) subscribeNext:^(SOAnswer *value) {
-			self.textLabel.text = [value.body stringByDecodingHTMLEntities];
-			self.textLabel.numberOfLines = 2;
-			self.textLabel.font = [UIFont systemFontOfSize:14.0];
+			NSAttributedString *htmlString = [[NSAttributedString alloc] initWithData:[[value.body stringByDecodingHTMLEntities] dataUsingEncoding:NSUTF8StringEncoding] options:@{
+																																					NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType}
+																   documentAttributes:nil error:nil];
+			self.textLabel.attributedText = htmlString;
+			self.textLabel.numberOfLines = 30;
+			self.textLabel.font = [UIFont systemFontOfSize:13.0];
 			self.textLabel.minimumScaleFactor = 0.7;
 			
 			self.detailTextLabel.text = [NSString stringWithFormat:@"made by %@ %@",[value.owner.username stringByDecodingHTMLEntities], [value.creationDate humanIntervalAgoSinceNow]];
