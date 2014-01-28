@@ -20,6 +20,8 @@
 @property (nonatomic, readonly) NSArray *tags;
 @property (nonatomic, readonly) NSInteger viewsCount;
 @property (nonatomic, readonly) SOUser *owner;
+@property (nonatomic, readonly) NSString *questionID;
+@property (nonatomic, readonly) NSString *body;
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 

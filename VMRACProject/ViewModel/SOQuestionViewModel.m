@@ -8,6 +8,8 @@
 
 #import "SOQuestionViewModel.h"
 #import "SOQuestion.h"
+#import "SOAnswersForQuestionOperation.h"
+#import "SOHTTPRequestOperationManager.h"
 
 @interface SOQuestionViewModel ()
 
@@ -25,6 +27,21 @@
 	self.model = modelObject;
 		
 	return self;
+}
+
+- (RACSignal *) loadAnswers
+{
+	RACReplaySubject *subject = [RACReplaySubject subject];
+	
+	[[[SOHTTPRequestOperationManager manager] rac_enqueueHTTPRequestOperation:[[SOAnswersForQuestionOperation alloc] initWithQuestionID:self.model.questionID] ] subscribeNext:^(RACTuple *response) {
+		NSData *responseData = response.second;
+		NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+		
+		[subject sendNext:responseDictionary];
+		[subject sendCompleted];
+	}];
+	
+	return subject;
 }
 
 @end

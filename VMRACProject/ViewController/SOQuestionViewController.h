@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *questionUser;
 @property (weak, nonatomic) IBOutlet UILabel *questionAnswers;
 @property (weak, nonatomic) IBOutlet UILabel *questionCreationDate;
+@property (weak, nonatomic) IBOutlet UITableView *questionAnswersTable;
 
 - (instancetype) initWithViewModel:(SOQuestionViewModel *)viewModelObject;
 

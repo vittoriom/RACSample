@@ -15,5 +15,6 @@
 @property (nonatomic, readonly) SOQuestion *model;
 
 - (instancetype) initWithModel:(SOQuestion *)modelObject;
+- (RACSignal *) loadAnswers;
 
 @end

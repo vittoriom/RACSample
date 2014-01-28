@@ -20,7 +20,7 @@
 	return [super initWithRequest:[NSURLRequest requestWithURL:
 								   [NSURL URLWithString:[[SOHTTPRequestOperationManager manager].baseURL.absoluteString
 														 stringByAppendingPathComponent:
-														 [NSString stringWithFormat:@"questions?page=%@&pagesize=%@&order=desc&sort=%@&site=stackoverflow",pageNum,pageSize,sortCriteria]]]]];
+														 [NSString stringWithFormat:@"questions?page=%@&pagesize=%@&order=desc&sort=%@&site=stackoverflow&filter=withbody",pageNum,pageSize,sortCriteria]]]]];
 }
 
 @end

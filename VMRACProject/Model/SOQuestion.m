@@ -17,6 +17,8 @@ NSString * const kSOQuestionTags = @"tags";
 NSString * const kSOQuestionTitle = @"title";
 NSString * const kSOQuestionViewsCount = @"view_count";
 NSString * const kSOQuestionOwner = @"owner";
+NSString * const kSOQuestionID = @"question_id";
+NSString * const kSOQuestionBody = @"body";
 
 @interface SOQuestion ()
 
@@ -28,6 +30,8 @@ NSString * const kSOQuestionOwner = @"owner";
 @property (nonatomic, strong) NSArray *tags;
 @property (nonatomic, assign) NSInteger viewsCount;
 @property (nonatomic, strong) SOUser *owner;
+@property (nonatomic, strong) NSString *questionID;
+@property (nonatomic, strong) NSString *body;
 
 @end
 
@@ -46,7 +50,9 @@ NSString * const kSOQuestionOwner = @"owner";
     self.tags = dictionary[kSOQuestionTags];
     self.viewsCount = [dictionary[kSOQuestionViewsCount] intValue];
     self.owner = [[SOUser alloc] initWithDictionary:dictionary[kSOQuestionOwner]];
-    
+    self.questionID = [NSString stringWithFormat:@"%d",[dictionary[kSOQuestionID] intValue]];
+	self.body = dictionary[kSOQuestionBody];
+	
     return self;
 }
 

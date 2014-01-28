@@ -42,6 +42,10 @@
 		self.questionUser.text = [NSString stringWithFormat:@"Made by %@",question.owner.username];
 		self.questionCreationDate.text = [question.creationDate humanIntervalAgoSinceNow];
 		self.questionAnswers.text = [NSString stringWithFormat:@"%d answers",question.answerCount];
+		
+		[[self.viewModel loadAnswers] subscribeCompleted:^{
+			[self.questionAnswersTable reloadData];
+		}];
 	}];
 }
 
