@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class SOQuestionViewModel;
+@class SOQuestionsViewModel;
 
-@interface SOQuestionViewController : UIViewController
+@interface SOQuestionsViewController : UIViewController
 
-@property (nonatomic, readonly) SOQuestionViewModel *viewModel;
+@property (nonatomic, readonly) SOQuestionsViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-- (instancetype) initWithViewModel:(SOQuestionViewModel *)viewModelObject;
+- (instancetype) initWithViewModel:(SOQuestionsViewModel *)viewModelObject;
 
 @end

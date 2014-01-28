@@ -2,42 +2,33 @@
 //  SOQuestionViewModel.m
 //  VMRACProject
 //
-//  Created by Vittorio Monaco on 27/01/14.
+//  Created by Vittorio Monaco on 28/01/14.
 //  Copyright (c) 2014 Vittorio Monaco. All rights reserved.
 //
 
 #import "SOQuestionViewModel.h"
 #import "SOQuestion.h"
-#import "SOHTTPRequestOperationManager.h"
-#import "SOHotQuestionsOperation.h"
 
 @interface SOQuestionViewModel ()
 
-- (void) parseModelFromData:(NSData *)responseData;
+@property (nonatomic, strong) SOQuestion *model;
 
 @end
 
 @implementation SOQuestionViewModel
 
-- (void) parseModelFromData:(NSData *)responseData
+- (instancetype) initWithModel:(SOQuestion *)modelObject
 {
-	NSError *error;
-	NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+	self = [super init];
+	if(!self) return nil;
 	
-	self.model = [[[responseDictionary[@"items"] rac_sequence] map:^id(NSDictionary *value) {
-		SOQuestion *question = [[SOQuestion alloc] initWithDictionary:value];
-		return question;
-	}] array];
-}
-
-- (instancetype) initWithModel:(NSArray *)modelObject
-{
-    self = [self init];
-    if(!self) return nil;
-    
-    self.model = modelObject;
-    
-    return self;
+	self.model = modelObject;
+	
+	[self.didBecomeActiveSignal subscribeNext:^(id x) {
+		
+	}];
+	
+	return self;
 }
 
 @end

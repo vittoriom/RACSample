@@ -11,7 +11,7 @@
 #import "SOHotQuestionsOperation.h"
 #import "SOQuestion.h"
 
-@interface SOQuestionViewModel (private)
+@interface SOQuestionsViewModel (private)
 
 - (void) parseModelFromData:(NSData *)responseData;
 

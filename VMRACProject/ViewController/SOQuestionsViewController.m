@@ -6,22 +6,22 @@
 //  Copyright (c) 2014 Vittorio Monaco. All rights reserved.
 //
 
-#import "SOQuestionViewController.h"
+#import "SOQuestionsViewController.h"
 #import "SOQuestion.h"
-#import "SOQuestionViewModel.h"
+#import "SOQuestionsViewModel.h"
 #import "SOQuestionTableViewCell.h"
 #import <RACDelegateProxy.h>
 
-@interface SOQuestionViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface SOQuestionsViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) SOQuestionViewModel *viewModel;
+@property (nonatomic, strong) SOQuestionsViewModel *viewModel;
 @property (nonatomic, strong) id<UITableViewDelegate> tableViewDelegate;
 
 @end
 
-@implementation SOQuestionViewController
+@implementation SOQuestionsViewController
 
-- (instancetype) initWithViewModel:(SOQuestionViewModel *)viewModelObject
+- (instancetype) initWithViewModel:(SOQuestionsViewModel *)viewModelObject
 {
     self = [self initWithNibName:@"SOQuestionView" bundle:nil];
     if(!self) return nil;

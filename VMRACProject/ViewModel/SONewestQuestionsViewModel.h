@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Vittorio Monaco. All rights reserved.
 //
 
-#import "SOQuestionViewModel.h"
+#import "SOQuestionsViewModel.h"
 
-@interface SONewestQuestionsViewModel : SOQuestionViewModel
+@interface SONewestQuestionsViewModel : SOQuestionsViewModel
 
 @end

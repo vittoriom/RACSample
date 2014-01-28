@@ -1,12 +1,12 @@
 #import "SOQuestion.h"
-#import "SOQuestionViewModel.h"
+#import "SOQuestionsViewModel.h"
 
 SPEC_BEGIN(SOQuestionsViewModelTests)
 
 describe(@"Questions view model", ^{
     it(@"Should be correctly initialized with a SOQuestion NSArray model object", ^{
         SOQuestion *modelObject = [SOQuestion new];
-        SOQuestionViewModel *viewModel = [[SOQuestionViewModel alloc] initWithModel:@[modelObject]];
+        SOQuestionsViewModel *viewModel = [[SOQuestionsViewModel alloc] initWithModel:@[modelObject]];
         
         [[viewModel shouldNot] beNil];
         [[viewModel.model should] haveCountOf:1];
