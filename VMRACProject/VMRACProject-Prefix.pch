@@ -13,4 +13,11 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import <EXTScope.h>
+    #import <AFNetworking-RACExtensions/AFHTTPRequestOperationManager+RACSupport.h>
+    #import <AFNetworking-RACExtensions/AFURLConnectionOperation+RACSupport.h>
+    #import <AFNetworking/AFNetworking.h>
+    #import <MBProgressHUD/MBProgressHUD.h>
 #endif
