@@ -10,10 +10,12 @@
 #import "SOQuestion.h"
 #import "SOQuestionViewModel.h"
 #import "SOQuestionTableViewCell.h"
+#import <RACDelegateProxy.h>
 
 @interface SOQuestionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) SOQuestionViewModel *viewModel;
+@property (nonatomic, strong) id<UITableViewDelegate> tableViewDelegate;
 
 @end
 
@@ -34,6 +36,18 @@
     [super viewDidLoad];
     
 	self.tableView.dataSource = self;
+	
+	RACDelegateProxy *delegate = [[RACDelegateProxy alloc] initWithProtocol:@protocol(UITableViewDelegate)];
+	[[delegate rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple *tuple) {
+		NSIndexPath *indexPath = tuple.second;
+		SOQuestion *modelObject = self.viewModel.model[indexPath.row];
+		
+		//Show the question view controller
+		NSLog(@"tapped question: %@",modelObject);
+	}];
+	
+	self.tableViewDelegate = (id<UITableViewDelegate>)delegate;
+	self.tableView.delegate = (id<UITableViewDelegate>)delegate;
 	
 	@weakify(self);
 	[[RACObserve(self.viewModel, model) ignore:nil] subscribeNext:^(NSArray *x) {

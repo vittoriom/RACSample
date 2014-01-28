@@ -22,7 +22,7 @@
     [self.didBecomeActiveSignal subscribeNext:^(id x) {
         @strongify(self);
 		
-		[[[SOHTTPRequestOperationManager manager] rac_enqueueHTTPRequestOperation:[SONewQuestionsOperation new]] subscribeNext:^(RACTuple *response) {
+	    [[[SOHTTPRequestOperationManager manager] rac_enqueueHTTPRequestOperation:[SONewQuestionsOperation new]] subscribeNext:^(RACTuple *response) {
 			NSError *error;
 			NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:response.second options:0 error:&error];
 				
