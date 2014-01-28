@@ -24,6 +24,20 @@
 		525DAB461895B1A700BD52D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525DAB2B1895B1A600BD52D5 /* Foundation.framework */; };
 		525DAB471895B1A700BD52D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525DAB2F1895B1A700BD52D5 /* UIKit.framework */; };
 		525DAB4F1895B1A700BD52D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 525DAB4D1895B1A700BD52D5 /* InfoPlist.strings */; };
+		52B12D5218970017002E3844 /* SOQuestionsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B12D5118970017002E3844 /* SOQuestionsViewModel.m */; };
+		52CE05451897018C000E5F4D /* SOQuestionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CE05441897018C000E5F4D /* SOQuestionViewModel.m */; };
+		52CE05471897088A000E5F4D /* SOQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CE05461897088A000E5F4D /* SOQuestionsViewController.m */; };
+		52F3BB8818970B7E00734830 /* SOQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BB8618970B7E00734830 /* SOQuestionViewController.m */; };
+		52F3BB8F18970E7200734830 /* SOHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BB8E18970E7200734830 /* SOHTTPRequestOperationManager.m */; };
+		A47AE37A1897ACBD0064B0CE /* SONewestQuestionsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A47AE3791897ACBD0064B0CE /* SONewestQuestionsViewModel.m */; };
+		A4B211D61897AD170073DB7F /* SONewQuestionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B211D51897AD170073DB7F /* SONewQuestionsOperation.m */; };
+		A4B211D91897AD670073DB7F /* SOVotedQuestionsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B211D81897AD670073DB7F /* SOVotedQuestionsViewModel.m */; };
+		A4B211DD1897AE510073DB7F /* NSDate+HumanInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B211DC1897AE510073DB7F /* NSDate+HumanInterval.m */; };
+		A4B211E41897AEF40073DB7F /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B211E11897AEF40073DB7F /* GTMNSString+HTML.m */; };
+		A4B211E51897AEF40073DB7F /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B211E31897AEF40073DB7F /* NSString+HTML.m */; };
+		A4B5EED818979BB00004B8EE /* SOHotQuestionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B5EED718979BB00004B8EE /* SOHotQuestionsOperation.m */; };
+		A4B5EEDC1897A4670004B8EE /* SOQuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B5EEDB1897A4670004B8EE /* SOQuestionTableViewCell.m */; };
+		A4B5EEDE1897A4740004B8EE /* SOQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B5EEDD1897A4740004B8EE /* SOQuestionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +75,33 @@
 		525DAB441895B1A700BD52D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		525DAB4C1895B1A700BD52D5 /* VMRACProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VMRACProjectTests-Info.plist"; sourceTree = "<group>"; };
 		525DAB4E1895B1A700BD52D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52B12D5118970017002E3844 /* SOQuestionsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOQuestionsViewModel.m; sourceTree = "<group>"; };
+		52CE05431897018C000E5F4D /* SOQuestionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOQuestionViewModel.h; path = ViewModel/SOQuestionViewModel.h; sourceTree = "<group>"; };
+		52CE05441897018C000E5F4D /* SOQuestionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOQuestionViewModel.m; path = ViewModel/SOQuestionViewModel.m; sourceTree = "<group>"; };
+		52CE05461897088A000E5F4D /* SOQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOQuestionsViewController.m; sourceTree = "<group>"; };
+		52F3BB8518970B7E00734830 /* SOQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOQuestionViewController.h; path = ViewController/SOQuestionViewController.h; sourceTree = "<group>"; };
+		52F3BB8618970B7E00734830 /* SOQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOQuestionViewController.m; path = ViewController/SOQuestionViewController.m; sourceTree = "<group>"; };
+		52F3BB8D18970E7200734830 /* SOHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOHTTPRequestOperationManager.h; path = Networking/SOHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		52F3BB8E18970E7200734830 /* SOHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOHTTPRequestOperationManager.m; path = Networking/SOHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		65B77122DB0A42DAB59E6166 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A60109F6B2446F8B85BF6A /* libPods-VMRACProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VMRACProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47AE3781897ACBD0064B0CE /* SONewestQuestionsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SONewestQuestionsViewModel.h; path = ViewModel/SONewestQuestionsViewModel.h; sourceTree = "<group>"; };
+		A47AE3791897ACBD0064B0CE /* SONewestQuestionsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SONewestQuestionsViewModel.m; path = ViewModel/SONewestQuestionsViewModel.m; sourceTree = "<group>"; };
+		A4B211D41897AD170073DB7F /* SONewQuestionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SONewQuestionsOperation.h; path = Networking/Operations/SONewQuestionsOperation.h; sourceTree = "<group>"; };
+		A4B211D51897AD170073DB7F /* SONewQuestionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SONewQuestionsOperation.m; path = Networking/Operations/SONewQuestionsOperation.m; sourceTree = "<group>"; };
+		A4B211D71897AD670073DB7F /* SOVotedQuestionsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOVotedQuestionsViewModel.h; path = ViewModel/SOVotedQuestionsViewModel.h; sourceTree = "<group>"; };
+		A4B211D81897AD670073DB7F /* SOVotedQuestionsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOVotedQuestionsViewModel.m; path = ViewModel/SOVotedQuestionsViewModel.m; sourceTree = "<group>"; };
+		A4B211DB1897AE510073DB7F /* NSDate+HumanInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HumanInterval.h"; sourceTree = "<group>"; };
+		A4B211DC1897AE510073DB7F /* NSDate+HumanInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HumanInterval.m"; sourceTree = "<group>"; };
+		A4B211E01897AEF40073DB7F /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		A4B211E11897AEF40073DB7F /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		A4B211E21897AEF40073DB7F /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		A4B211E31897AEF40073DB7F /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		A4B5EED618979BB00004B8EE /* SOHotQuestionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOHotQuestionsOperation.h; path = Networking/Operations/SOHotQuestionsOperation.h; sourceTree = "<group>"; };
+		A4B5EED718979BB00004B8EE /* SOHotQuestionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOHotQuestionsOperation.m; path = Networking/Operations/SOHotQuestionsOperation.m; sourceTree = "<group>"; };
+		A4B5EEDA1897A4670004B8EE /* SOQuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOQuestionTableViewCell.h; path = View/SOQuestionTableViewCell.h; sourceTree = "<group>"; };
+		A4B5EEDB1897A4670004B8EE /* SOQuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOQuestionTableViewCell.m; path = View/SOQuestionTableViewCell.m; sourceTree = "<group>"; };
+		A4B5EEDD1897A4740004B8EE /* SOQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SOQuestionView.xib; path = View/SOQuestionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +178,11 @@
 		525DAB311895B1A700BD52D5 /* VMRACProject */ = {
 			isa = PBXGroup;
 			children = (
+				A4B211DA1897AE4A0073DB7F /* 3rdParty */,
+				52F3BB8C18970DFC00734830 /* Networking */,
+				52B12D4E1896FE5B002E3844 /* View */,
+				52B12D4D1896FE4F002E3844 /* ViewController */,
+				52B12D4C1896FE48002E3844 /* ViewModel */,
 				525551491895B8620074CB93 /* Model */,
 				525DAB3A1895B1A700BD52D5 /* VMAppDelegate.h */,
 				525DAB3B1895B1A700BD52D5 /* VMAppDelegate.m */,
@@ -165,6 +209,8 @@
 				525DAB4B1895B1A700BD52D5 /* Supporting Files */,
 				525551431895B5A00074CB93 /* SOQuestionTests.m */,
 				5255514A1895BA470074CB93 /* SOUserTests.m */,
+				52B12D5118970017002E3844 /* SOQuestionsViewModel.m */,
+				52CE05461897088A000E5F4D /* SOQuestionsViewController.m */,
 			);
 			path = VMRACProjectTests;
 			sourceTree = "<group>";
@@ -177,6 +223,96 @@
 				525551451895B5B90074CB93 /* VMRACProjectTests.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52B12D4C1896FE48002E3844 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				52CE05431897018C000E5F4D /* SOQuestionViewModel.h */,
+				52CE05441897018C000E5F4D /* SOQuestionViewModel.m */,
+				A47AE3781897ACBD0064B0CE /* SONewestQuestionsViewModel.h */,
+				A47AE3791897ACBD0064B0CE /* SONewestQuestionsViewModel.m */,
+				A4B211D71897AD670073DB7F /* SOVotedQuestionsViewModel.h */,
+				A4B211D81897AD670073DB7F /* SOVotedQuestionsViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		52B12D4D1896FE4F002E3844 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52F3BB8518970B7E00734830 /* SOQuestionViewController.h */,
+				52F3BB8618970B7E00734830 /* SOQuestionViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		52B12D4E1896FE5B002E3844 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4B5EEDD1897A4740004B8EE /* SOQuestionView.xib */,
+				A4B5EED91897A4430004B8EE /* UITableViewCells */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		52F3BB8C18970DFC00734830 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A4B5EED218979B830004B8EE /* Operations */,
+				52F3BB8D18970E7200734830 /* SOHTTPRequestOperationManager.h */,
+				52F3BB8E18970E7200734830 /* SOHTTPRequestOperationManager.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		A4B211DA1897AE4A0073DB7F /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				A4B211DF1897AEE80073DB7F /* HTML */,
+				A4B211DE1897AE540073DB7F /* HumanInterval */,
+			);
+			name = 3rdParty;
+			sourceTree = "<group>";
+		};
+		A4B211DE1897AE540073DB7F /* HumanInterval */ = {
+			isa = PBXGroup;
+			children = (
+				A4B211DB1897AE510073DB7F /* NSDate+HumanInterval.h */,
+				A4B211DC1897AE510073DB7F /* NSDate+HumanInterval.m */,
+			);
+			name = HumanInterval;
+			sourceTree = "<group>";
+		};
+		A4B211DF1897AEE80073DB7F /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				A4B211E01897AEF40073DB7F /* GTMNSString+HTML.h */,
+				A4B211E11897AEF40073DB7F /* GTMNSString+HTML.m */,
+				A4B211E21897AEF40073DB7F /* NSString+HTML.h */,
+				A4B211E31897AEF40073DB7F /* NSString+HTML.m */,
+			);
+			name = HTML;
+			sourceTree = "<group>";
+		};
+		A4B5EED218979B830004B8EE /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A4B5EED618979BB00004B8EE /* SOHotQuestionsOperation.h */,
+				A4B5EED718979BB00004B8EE /* SOHotQuestionsOperation.m */,
+				A4B211D41897AD170073DB7F /* SONewQuestionsOperation.h */,
+				A4B211D51897AD170073DB7F /* SONewQuestionsOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		A4B5EED91897A4430004B8EE /* UITableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A4B5EEDA1897A4670004B8EE /* SOQuestionTableViewCell.h */,
+				A4B5EEDB1897A4670004B8EE /* SOQuestionTableViewCell.m */,
+			);
+			name = UITableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525DAB361895B1A700BD52D5 /* InfoPlist.strings in Resources */,
+				A4B5EEDE1897A4740004B8EE /* SOQuestionView.xib in Resources */,
 				525DAB3E1895B1A700BD52D5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,9 +480,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				5255514E1895BDB70074CB93 /* SOUser.m in Sources */,
+				A4B211D91897AD670073DB7F /* SOVotedQuestionsViewModel.m in Sources */,
 				525DAB381895B1A700BD52D5 /* main.m in Sources */,
+				52F3BB8F18970E7200734830 /* SOHTTPRequestOperationManager.m in Sources */,
+				A4B211DD1897AE510073DB7F /* NSDate+HumanInterval.m in Sources */,
+				52F3BB8818970B7E00734830 /* SOQuestionViewController.m in Sources */,
+				A47AE37A1897ACBD0064B0CE /* SONewestQuestionsViewModel.m in Sources */,
+				A4B211E51897AEF40073DB7F /* NSString+HTML.m in Sources */,
+				A4B5EEDC1897A4670004B8EE /* SOQuestionTableViewCell.m in Sources */,
 				525DAB3C1895B1A700BD52D5 /* VMAppDelegate.m in Sources */,
+				A4B5EED818979BB00004B8EE /* SOHotQuestionsOperation.m in Sources */,
 				525551481895B85C0074CB93 /* SOQuestion.m in Sources */,
+				52CE05451897018C000E5F4D /* SOQuestionViewModel.m in Sources */,
+				A4B211D61897AD170073DB7F /* SONewQuestionsOperation.m in Sources */,
+				A4B211E41897AEF40073DB7F /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +501,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B12D5218970017002E3844 /* SOQuestionsViewModel.m in Sources */,
 				5255514B1895BA470074CB93 /* SOUserTests.m in Sources */,
+				52CE05471897088A000E5F4D /* SOQuestionsViewController.m in Sources */,
 				525551441895B5A00074CB93 /* SOQuestionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
