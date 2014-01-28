@@ -13,9 +13,22 @@
 
 @interface SOQuestionViewModel ()
 
+- (void) parseModelFromData:(NSData *)responseData;
+
 @end
 
 @implementation SOQuestionViewModel
+
+- (void) parseModelFromData:(NSData *)responseData
+{
+	NSError *error;
+	NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+	
+	self.model = [[[responseDictionary[@"items"] rac_sequence] map:^id(NSDictionary *value) {
+		SOQuestion *question = [[SOQuestion alloc] initWithDictionary:value];
+		return question;
+	}] array];
+}
 
 - (instancetype) initWithModel:(NSArray *)modelObject
 {

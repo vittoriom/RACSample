@@ -11,6 +11,12 @@
 #import "SOHotQuestionsOperation.h"
 #import "SOQuestion.h"
 
+@interface SOQuestionViewModel (private)
+
+- (void) parseModelFromData:(NSData *)responseData;
+
+@end
+
 @implementation SOVotedQuestionsViewModel
 
 - (instancetype) init
@@ -23,13 +29,7 @@
         @strongify(self);
 		
 		[[[SOHTTPRequestOperationManager manager] rac_enqueueHTTPRequestOperation:[SOHotQuestionsOperation new]] subscribeNext:^(RACTuple *response) {
-			NSError *error;
-			NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:response.second options:0 error:&error];
-			
-			self.model = [[[responseDictionary[@"items"] rac_sequence] map:^id(NSDictionary *value) {
-				SOQuestion *question = [[SOQuestion alloc] initWithDictionary:value];
-				return question;
-			}] array];
+			[self parseModelFromData:response.second];
 		}];
     }];
     
