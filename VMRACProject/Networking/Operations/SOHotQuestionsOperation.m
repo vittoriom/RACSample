@@ -13,11 +13,7 @@
 
 - (instancetype) init
 {
-	self = [super initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[SOHTTPRequestOperationManager manager].baseURL.absoluteString stringByAppendingPathComponent:@"questions?page=1&pagesize=25&order=desc&sort=votes&site=stackoverflow"]]]];
-	
-	if(!self) return nil;
-	
-	return self;
+	return [super initWithPage:1 withPageSize:25 sortedBy:@"votes"];
 }
 
 @end

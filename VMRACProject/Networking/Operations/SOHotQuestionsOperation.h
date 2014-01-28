@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Vittorio Monaco. All rights reserved.
 //
 
-#import "AFHTTPRequestOperation.h"
+#import "SOQuestionsOperation.h"
 
-@interface SOHotQuestionsOperation : AFHTTPRequestOperation
+@interface SOHotQuestionsOperation : SOQuestionsOperation
 
 @end
