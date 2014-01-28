@@ -29,6 +29,7 @@
 		52CE05471897088A000E5F4D /* SOQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CE05461897088A000E5F4D /* SOQuestionsViewController.m */; };
 		52F3BB8818970B7E00734830 /* SOQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BB8618970B7E00734830 /* SOQuestionViewController.m */; };
 		52F3BB8B18970BCB00734830 /* SOQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F3BB8A18970BCB00734830 /* SOQuestionView.xib */; };
+		52F3BB8F18970E7200734830 /* SOSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BB8E18970E7200734830 /* SOSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		52F3BB8518970B7E00734830 /* SOQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOQuestionViewController.h; path = ViewController/SOQuestionViewController.h; sourceTree = "<group>"; };
 		52F3BB8618970B7E00734830 /* SOQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOQuestionViewController.m; path = ViewController/SOQuestionViewController.m; sourceTree = "<group>"; };
 		52F3BB8A18970BCB00734830 /* SOQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SOQuestionView.xib; sourceTree = "<group>"; };
+		52F3BB8D18970E7200734830 /* SOSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSessionManager.h; path = Networking/SOSessionManager.h; sourceTree = "<group>"; };
+		52F3BB8E18970E7200734830 /* SOSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSessionManager.m; path = Networking/SOSessionManager.m; sourceTree = "<group>"; };
 		65B77122DB0A42DAB59E6166 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A60109F6B2446F8B85BF6A /* libPods-VMRACProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VMRACProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -226,6 +229,8 @@
 		52F3BB8C18970DFC00734830 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				52F3BB8D18970E7200734830 /* SOSessionManager.h */,
+				52F3BB8E18970E7200734830 /* SOSessionManager.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 			files = (
 				5255514E1895BDB70074CB93 /* SOUser.m in Sources */,
 				525DAB381895B1A700BD52D5 /* main.m in Sources */,
+				52F3BB8F18970E7200734830 /* SOSessionManager.m in Sources */,
 				52F3BB8818970B7E00734830 /* SOQuestionViewController.m in Sources */,
 				525DAB3C1895B1A700BD52D5 /* VMAppDelegate.m in Sources */,
 				525551481895B85C0074CB93 /* SOQuestion.m in Sources */,

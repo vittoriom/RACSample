@@ -8,6 +8,7 @@
 
 #import "SOQuestionViewModel.h"
 #import "SOQuestion.h"
+#import "SOSessionManager.h"
 
 @interface SOQuestionViewModel ()
 
@@ -28,11 +29,10 @@
     [self.didBecomeActiveSignal subscribeNext:^(id x) {
         @strongify(self);
         
-        NSLog(@"Active");
         //If our model object is empty, we load hot questions
         if(modelObject.count == 0)
         {
-            
+            [SOSessionManager manager] rac_GET:<#(NSString *)#> parameters:<#(NSDictionary *)#>
         } else
         {
             
